@@ -45,8 +45,8 @@ public class FizzbuzzTest {
     public void should_return_FizzBuzz_when_multiple_15() {
         FizzBuzzMain job = new FizzBuzzMain();
         Assert.assertEquals(FIZZBUZZ, job.echo(15));
-        Assert.assertEquals(FIZZBUZZ, job.echo(30));
         Assert.assertEquals(FIZZBUZZ, job.echo(45));
+        Assert.assertEquals(FIZZBUZZ, job.echo(150));
     }
 
     @Test
@@ -55,5 +55,13 @@ public class FizzbuzzTest {
         Assert.assertEquals(FIZZBUZZWHIZZ, job.echo(105));
         Assert.assertEquals(FIZZBUZZWHIZZ, job.echo(210));
         Assert.assertEquals(FIZZBUZZWHIZZ, job.echo(420));
+    }
+
+    @Test
+    public void should_return_Fizz_when_contain_3() {
+        FizzBuzzMain job = new FizzBuzzMain();
+        Assert.assertEquals(FIZZ, job.echo(13));
+        Assert.assertEquals(FIZZ, job.echo(30));
+        Assert.assertEquals(FIZZ, job.echo(315));
     }
 }

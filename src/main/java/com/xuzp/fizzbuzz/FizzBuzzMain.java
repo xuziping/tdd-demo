@@ -1,5 +1,6 @@
 package com.xuzp.fizzbuzz;
 
+import com.xuzp.fizzbuzz.rules.ContainThreeRule;
 import com.xuzp.fizzbuzz.rules.MultipleFifteenRule;
 import com.xuzp.fizzbuzz.rules.MultipleFiveRule;
 import com.xuzp.fizzbuzz.rules.MultipleHundredFiveRule;
@@ -20,6 +21,7 @@ public class FizzBuzzMain {
         rules.add(new MultipleSevenRule());
         rules.add(new MultipleFifteenRule());
         rules.add(new MultipleHundredFiveRule());
+        rules.add(new ContainThreeRule());
     }
 
     public static void main(String[] args) {

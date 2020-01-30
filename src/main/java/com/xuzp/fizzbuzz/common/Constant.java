@@ -9,6 +9,5 @@ public class Constant {
         public static final String WHIZZ = "Whizz";
         public static final String FIZZBUZZ = "FizzBuzz";
         public static final String FIZZBUZZWHIZZ = "FizzBuzzWhizz";
-
     }
 }
