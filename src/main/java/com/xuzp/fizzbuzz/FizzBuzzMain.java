@@ -6,7 +6,7 @@ public class FizzBuzzMain {
 
     }
 
-    public String echo(Integer word) {
-        return null;
+    public String echo(Integer sequence) {
+        return String.valueOf(sequence);
     }
 }
