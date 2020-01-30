@@ -2,6 +2,8 @@ package com.xuzp.fizzbuzz;
 
 import static com.xuzp.fizzbuzz.common.Constant.Response.BUZZ;
 import static com.xuzp.fizzbuzz.common.Constant.Response.FIZZ;
+import static com.xuzp.fizzbuzz.common.Constant.Response.FIZZBUZZ;
+import static com.xuzp.fizzbuzz.common.Constant.Response.FIZZBUZZWHIZZ;
 import static com.xuzp.fizzbuzz.common.Constant.Response.WHIZZ;
 
 import org.junit.Assert;
@@ -37,5 +39,21 @@ public class FizzbuzzTest {
         Assert.assertEquals(WHIZZ, job.echo(7));
         Assert.assertEquals(WHIZZ, job.echo(14));
         Assert.assertEquals(WHIZZ, job.echo(28));
+    }
+
+    @Test
+    public void should_return_FizzBuzz_when_multiple_15() {
+        FizzBuzzMain job = new FizzBuzzMain();
+        Assert.assertEquals(FIZZBUZZ, job.echo(15));
+        Assert.assertEquals(FIZZBUZZ, job.echo(30));
+        Assert.assertEquals(FIZZBUZZ, job.echo(45));
+    }
+
+    @Test
+    public void should_return_FizzBuzzWhizz_when_multiple_15() {
+        FizzBuzzMain job = new FizzBuzzMain();
+        Assert.assertEquals(FIZZBUZZWHIZZ, job.echo(105));
+        Assert.assertEquals(FIZZBUZZWHIZZ, job.echo(210));
+        Assert.assertEquals(FIZZBUZZWHIZZ, job.echo(420));
     }
 }
