@@ -1,6 +1,7 @@
 package com.xuzp.fizzbuzz;
 
 import static com.xuzp.fizzbuzz.common.Constant.Response.BUZZ;
+import static com.xuzp.fizzbuzz.common.Constant.Response.BUZZWHIZZ;
 import static com.xuzp.fizzbuzz.common.Constant.Response.FIZZ;
 import static com.xuzp.fizzbuzz.common.Constant.Response.FIZZBUZZ;
 import static com.xuzp.fizzbuzz.common.Constant.Response.FIZZBUZZWHIZZ;
@@ -63,5 +64,13 @@ public class FizzbuzzTest {
         Assert.assertEquals(FIZZ, job.echo(13));
         Assert.assertEquals(FIZZ, job.echo(30));
         Assert.assertEquals(FIZZ, job.echo(315));
+    }
+
+    @Test
+    public void should_return_BuzzWhizz_when_contain_5() {
+        FizzBuzzMain job = new FizzBuzzMain();
+        Assert.assertEquals(BUZZWHIZZ, job.echo(35));
+        Assert.assertEquals(BUZZWHIZZ, job.echo(105));
+        Assert.assertEquals(BUZZWHIZZ, job.echo(15));
     }
 }
