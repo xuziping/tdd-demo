@@ -1,15 +1,22 @@
 package com.xuzp.fizzbuzz.rules;
 
-import com.xuzp.fizzbuzz.common.Constant.Response;
+import static com.xuzp.fizzbuzz.common.Response.Fizz;
+
 import com.xuzp.fizzbuzz.common.Priority;
 
 public class MultipleThreeRule implements Rule {
 
     private static final int THREE = 3;
 
+    private Priority priority;
+
+    public MultipleThreeRule(Priority priority) {
+        this.priority = priority;
+    }
+
     @Override
     public int getPriority() {
-        return Priority.ONE.getValue();
+        return priority.getValue();
     }
 
     @Override
@@ -19,6 +26,6 @@ public class MultipleThreeRule implements Rule {
 
     @Override
     public String echo(int sequence) {
-        return Response.FIZZ;
+        return Fizz.name();
     }
 }

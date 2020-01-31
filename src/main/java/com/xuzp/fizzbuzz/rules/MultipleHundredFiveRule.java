@@ -1,15 +1,22 @@
 package com.xuzp.fizzbuzz.rules;
 
-import com.xuzp.fizzbuzz.common.Constant.Response;
+import static com.xuzp.fizzbuzz.common.Response.FizzBuzzWhizz;
+
 import com.xuzp.fizzbuzz.common.Priority;
 
 public class MultipleHundredFiveRule implements Rule {
 
     private static final int HUNDRED_FIVE = 105;
 
+    private Priority priority;
+
+    public MultipleHundredFiveRule(Priority priority) {
+        this.priority = priority;
+    }
+
     @Override
     public int getPriority() {
-        return Priority.THREE.getValue();
+        return priority.getValue();
     }
 
     @Override
@@ -19,6 +26,6 @@ public class MultipleHundredFiveRule implements Rule {
 
     @Override
     public String echo(int sequence) {
-        return Response.FIZZBUZZWHIZZ;
+        return FizzBuzzWhizz.name();
     }
 }

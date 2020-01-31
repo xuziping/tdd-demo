@@ -1,34 +1,22 @@
 package com.xuzp.fizzbuzz;
 
-import com.xuzp.fizzbuzz.rules.ContainThreeRule;
-import com.xuzp.fizzbuzz.rules.MultipleFifteenRule;
-import com.xuzp.fizzbuzz.rules.MultipleFiveRule;
-import com.xuzp.fizzbuzz.rules.MultipleHundredFiveRule;
-import com.xuzp.fizzbuzz.rules.MultipleSevenRule;
-import com.xuzp.fizzbuzz.rules.MultipleThreeRule;
 import com.xuzp.fizzbuzz.rules.Rule;
-import java.util.ArrayList;
+import com.xuzp.fizzbuzz.rules.RuleFactory;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class FizzBuzzMain {
 
-    private static final List<Rule> rules = new ArrayList();
-
-    static {
-        rules.add(new MultipleThreeRule());
-        rules.add(new MultipleFiveRule());
-        rules.add(new MultipleSevenRule());
-        rules.add(new MultipleFifteenRule());
-        rules.add(new MultipleHundredFiveRule());
-        rules.add(new ContainThreeRule());
-    }
-
     public static void main(String[] args) {
-
+        FizzBuzzMain main = new FizzBuzzMain();
+        IntStream.range(1, 16).forEach(seq ->
+            System.out.println(main.echo(seq))
+        );
     }
 
     public String echo(Integer sequence) {
+        List<Rule> rules = RuleFactory.getRules(sequence);
         return rules.stream()
             .sorted(Comparator.comparing(Rule::getPriority).reversed())
             .filter(rule -> rule.trigger(sequence)).findFirst()

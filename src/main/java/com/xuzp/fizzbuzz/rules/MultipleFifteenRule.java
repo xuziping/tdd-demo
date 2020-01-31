@@ -1,15 +1,22 @@
 package com.xuzp.fizzbuzz.rules;
 
-import com.xuzp.fizzbuzz.common.Constant.Response;
+import static com.xuzp.fizzbuzz.common.Response.FizzBuzz;
+
 import com.xuzp.fizzbuzz.common.Priority;
 
 public class MultipleFifteenRule implements Rule {
 
     private static final int FIFTEEN = 15;
 
+    private Priority priority;
+
+    public MultipleFifteenRule(Priority priority) {
+        this.priority = priority;
+    }
+
     @Override
     public int getPriority() {
-        return Priority.TWO.getValue();
+        return priority.getValue();
     }
 
     @Override
@@ -19,6 +26,6 @@ public class MultipleFifteenRule implements Rule {
 
     @Override
     public String echo(int sequence) {
-        return Response.FIZZBUZZ;
+        return FizzBuzz.name();
     }
 }

@@ -1,16 +1,16 @@
 package com.xuzp.fizzbuzz.rules;
 
-import static com.xuzp.fizzbuzz.common.Response.Whizz;
+import static com.xuzp.fizzbuzz.common.Response.BuzzWhizz;
 
 import com.xuzp.fizzbuzz.common.Priority;
 
-public class MultipleSevenRule implements Rule {
+public class MultipleThirtyFiveRule implements Rule {
 
-    private static final int SEVEN = 7;
+    private static final int THIRTY_FIVE = 35;
 
     private Priority priority;
 
-    public MultipleSevenRule(Priority priority) {
+    public MultipleThirtyFiveRule(Priority priority) {
         this.priority = priority;
     }
 
@@ -21,11 +21,11 @@ public class MultipleSevenRule implements Rule {
 
     @Override
     public boolean trigger(int sequence) {
-        return sequence > 0 && sequence % SEVEN == 0;
+        return sequence > 0 && sequence % THIRTY_FIVE == 0;
     }
 
     @Override
     public String echo(int sequence) {
-        return Whizz.name();
+        return BuzzWhizz.name();
     }
 }
